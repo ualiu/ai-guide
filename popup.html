@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Guide Extension</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        padding: 15px;
+        width: 500px;
+      }
+      .container {
+        max-width: 100%;
+        width: 100%;
+      }
+      .input-group {
+        margin-bottom: 10px;
+      }
+      .form-control {
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+      }
+      .btn {
+        font-size: 16px;
+        padding: 10px;
+      }
+      .button-group {
+        display: flex;
+        justify-content: space-between;
+      }
+      .button-group .btn {
+        width: 48%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3 class="text-center">AI Guide</h3>
+      <div class="input-group">
+        <input
+          type="text"
+          class="form-control"
+          id="prompt"
+          placeholder="Enter your prompt"
+        />
+      </div>
+      <div class="button-group">
+        <button class="btn btn-primary" id="getInstructions">
+          Get Instructions
+        </button>
+        <button id="analyzePageButton" class="btn btn-warning">
+          Analyze This Page
+        </button>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
