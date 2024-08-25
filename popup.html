@@ -3,60 +3,92 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Guide Extension</title>
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <title>AI Guide</title>
     <style>
       body {
-        padding: 15px;
-        width: 500px;
+        font-family: "Inter", sans-serif;
+        background-color: #f8f4f0;
+        margin: 0;
+        padding: 20px;
+        width: 300px;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       }
-      .container {
-        max-width: 100%;
+      h1 {
+        color: #1a202c;
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      input[type="text"] {
         width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #cbd5e0;
+        border-radius: 5px;
+        font-size: 14px;
       }
-      .input-group {
+      button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      #getInstructions {
+        background-color: #4299e1;
+        color: white;
         margin-bottom: 10px;
       }
-      .form-control {
-        font-size: 16px;
-        padding: 10px;
-        width: 100%;
+      #getInstructions:hover {
+        background-color: #3182ce;
       }
-      .btn {
-        font-size: 16px;
-        padding: 10px;
+      #analyzePageButton {
+        background-color: #f6e05e;
+        color: #1a202c;
       }
-      .button-group {
-        display: flex;
-        justify-content: space-between;
+      #analyzePageButton:hover {
+        background-color: #ecc94b;
       }
-      .button-group .btn {
-        width: 48%;
+      #loadingSpinner {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .spinner {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3498db;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <h3 class="text-center">AI Guide</h3>
-      <div class="input-group">
-        <input
-          type="text"
-          class="form-control"
-          id="prompt"
-          placeholder="Enter your prompt"
-        />
-      </div>
-      <div class="button-group">
-        <button class="btn btn-primary" id="getInstructions">
-          Get Instructions
-        </button>
-        <button id="analyzePageButton" class="btn btn-warning">
-          Analyze This Page
-        </button>
-      </div>
+    <h1>AI Guide</h1>
+    <input
+      type="text"
+      id="prompt"
+      placeholder="ie., How do I create an account on this website?"
+    />
+    <button id="getInstructions">Get Instructions</button>
+    <button id="analyzePageButton">Analyze This Page</button>
+    <div id="loadingSpinner">
+      <div class="spinner"></div>
+      <p>AI is processing your request...</p>
     </div>
 
     <script src="popup.js"></script>
